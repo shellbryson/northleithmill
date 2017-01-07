@@ -1,2 +1,127 @@
 // North Leith Mill
 
+@import 'vendor/vendor';
+@import 'config/colors';
+@import 'mixins/mixins';
+
+// *****************************************************************************
+// * SIZES
+// *****************************************************************************
+
+$page-padding: 20px;
+
+// *****************************************************************************
+// * COMMON
+// *****************************************************************************
+
+h1,
+h2,
+h3 {
+  font-family: 'Questrial', sans-serif;
+}
+
+// *****************************************************************************
+// * BASIC PAGE
+// *****************************************************************************
+
+.nlm-header {
+  @include rem(padding, $page-padding);
+}
+
+.nlm-links {
+
+  &__intro {
+    @include rem(font-size, 12px);
+    color: $color-fade-text;
+    font-weight: bold;
+
+    p {
+      margin-bottom: 0;
+    }
+
+  }
+
+  &__button {
+    color: $color-button-fg;
+    border-radius: 4px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      .nlm-links__icon-after {
+        color: $color-fade-text-hover;
+        padding-left: 14px;
+      }
+    }
+  }
+
+  &__icon {
+    //padding-right: 4px;
+  }
+
+  &__icon-after {
+    padding-left: 10px;
+    color: $color-fade-text;
+    transition: 0.3s;
+  }
+
+}
+
+.nlm-map {
+  @include rem(height, 400px);
+  background-color: $color-map-bg;
+  display: block;
+  width: 100%;
+}
+
+.nlm-content {
+  &:before,
+  &:after {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: $color-map-border;
+    content: '';
+  }
+}
+
+.nlm-footer {
+  @include rem(padding, $page-padding);
+  @include rem(font-size, 13px);
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
+// *****************************************************************************
+// * ANIMATION
+// *****************************************************************************
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.nlm-fade-in-one {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: .7s;
+  animation-delay: .2s;
+}
+
+.nlm-fade-in-two {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: .7s;
+  animation-delay: .5s;
+}
+
+.nlm-fade-in-three {
+  opacity: 0;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: .7s;
+  animation-delay: .8s;
+}
+
