@@ -1,9 +1,48 @@
 <html>
   <head>
     <title>North Leith Mill</title>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11367991-6', 'auto');
+      ga('send', 'pageview');
+
+      // AIzaSyAoIXZAssDWndXbtfsK_ZHnmK3ITw-hVyA
+
+
+
+    </script>
   </head>
   <body>
-    <h1>North Leith Mill</h1>
-    <p>Leith, Edinburgh, Scotland</p>
+    <main>
+      <h1>North Leith Mill</h1>
+      <p>Leith, Edinburgh, Scotland</p>
+      <section id="map">
+
+      </section>
+    </main>
+    <footer>
+      &copy <a href="https://shellbryson.com">shellbryson.com</a>
+    </footer>
+    <script>
+      function initMap() {
+        //@55.9786619,-3.1733994,11z
+        var nlm = {lat: 55.9786619, lng: -3.1733994};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: nlm
+        });
+        var marker = new google.maps.Marker({
+          position: nlm,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoIXZAssDWndXbtfsK_ZHnmK3ITw-hVyA&callback=initMap">
+    </script>
   </body>
 </html>
