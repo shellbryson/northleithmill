@@ -1,9 +1,72 @@
+<!DOCTYPE html>
 <html>
   <head>
+
+    <!--
+      North Leith Mill
+      Site by https://sheru.uk
+      To contact me, visit shellbryson.com
+    -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Community site for the North Leith Mill residential block in Leith, Edinburgh.">
+
     <title>North Leith Mill</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/northleithmill.css">
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-11367991-6', 'auto');
+      ga('send', 'pageview');
+    </script>
   </head>
   <body>
-    <h1>North Leith Mill</h1>
-    <p>Leith, Edinburgh, Scotland</p>
+
+    <header class="nlm-header">
+      <h1 class="nlm-fade-in-one">North Leith Mill</h1>
+      <p class="nlm-fade-in-two">Leith, Edinburgh, Scotland</p>
+
+      <div class="nlm-links nlm-fade-in-three">
+        <a href="https://www.facebook.com/groups/northleithmill/" class="nlm-links__button">
+          <i class="fa fa-facebook-square nlm-links__icon"></i>
+          Facebook
+          <i class="fa fa-arrow-circle-right nlm-links__icon-after"></i>
+        </a>
+      </div>
+    </header>
+
+    <main class="nlm-content">
+      <section id="js-map" class="nlm-map"></section>
+    </main>
+
+    <footer class="nlm-footer">
+      <a href="https://shellbryson.com">&copy</a>
+    </footer>
+
+    <script>
+      function initMap() {
+        var nlm = {lat: 55.9779213, lng: -3.1800781};
+        var map = new google.maps.Map(document.getElementById('js-map'), {
+          zoom: 16,
+          center: nlm,
+          mapTypeId: 'hybrid'
+        });
+        var marker = new google.maps.Marker({
+          position: nlm,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoIXZAssDWndXbtfsK_ZHnmK3ITw-hVyA&callback=initMap">
+    </script>
   </body>
 </html>
