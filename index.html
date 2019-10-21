@@ -44,27 +44,13 @@
     </header>
 
     <main class="nlm-content">
-      <section id="js-map" class="nlm-map"></section>
+      <section class="nlm-map"><iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACbU2czqa4ZFu0UmbH4b-e714SWztbDs4&q=eh66jy"></iframe></section>
     </main>
 
     <footer class="nlm-footer">
       <a href="https://shellbryson.com">&copy</a>
     </footer>
 
-    <script>
-      function initMap() {
-        var nlm = {lat: 55.9779213, lng: -3.1800781};
-        var map = new google.maps.Map(document.getElementById('js-map'), {
-          zoom: 16,
-          center: nlm,
-          mapTypeId: 'hybrid'
-        });
-        var marker = new google.maps.Marker({
-          position: nlm,
-          map: map
-        });
-      }
-    </script>
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZo-U3t67r3uvGR_DFp3lPKRBHcD5wuVY&callback=initMap">
     </script>
